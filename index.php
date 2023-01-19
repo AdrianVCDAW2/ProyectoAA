@@ -134,6 +134,12 @@ function crear_usuario(){
 }
 function ver_reservas(){
     //TODO: Listar reservas por ID ($_SESSION["id"])
+    require "config/conectar.php";
+    $sql = "SELECT * FROM reservas WHERE id_cliente = '".$_SESSION["id"][0]."'";
+    $resul = mysqli_query($conexion,$sql);
+    while ($fila = mysqli_fetch_array($resul)){
+        $reservas[] = $fila;
+    }
     include_once "vistas/vista_ver_reservas.php";
 }
 //include_once "./vistas/pie.php";

@@ -14,3 +14,11 @@ header>nav {
 nav>li {
     display: inline-block;
 }
+
+tr {
+    border: 1px solid black;
+}
+
+td {
+    border: 1px solid black;
+}
