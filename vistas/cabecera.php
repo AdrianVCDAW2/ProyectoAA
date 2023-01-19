@@ -84,7 +84,7 @@
                 }
             }
             $nav .= "<li><a href='?opcion=crear_usuario'>Crear usuario :)</a></li>";
-            $nav .= "<li>2</li>";
+            $nav .= "<li><a href='?opcion=crear_reserva'>Crear reserva :)</a></li>";
             $nav .= "<li>3</li>";
             $nav .= "<li>4</li>";
     $nav .= "<li>5</li>";
