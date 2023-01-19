@@ -19,8 +19,8 @@ if (isset($_GET['opcion'])) {
         case "crear_usuario":
             crear_usuario();
             break;
-        case "listar":
-            listar();
+        case "crear_reserva":
+            crear_reserva();
             break;
         case "buscar":
             if (isset($_POST["nombre"])) {
@@ -44,7 +44,7 @@ function inicio() {
     // Creamos la sql de búsqueda
     $sql = 'SELECT usuario,correo_usuario,passwd_usuario,perfil_usuario FROM usuarios';
     $resul = mysqli_query($conexion, $sql);
-    // Recogemos lso resultados devueltos por la BD y los metemos en un array $personas[]
+    // Recogemos lso resultados devueltos por la BD y los metemos en un array
     while ($fila = mysqli_fetch_array($resul))
         {
         // procesar la fila
@@ -135,6 +135,9 @@ function crear_usuario(){
 function ver_reservas(){
     //TODO: Listar reservas por ID ($_SESSION["id"])
     include_once "vistas/vista_ver_reservas.php";
+}
+function crear_reserva(){
+    include_once "vistas/vista_crear_reserva.php";
 }
 //include_once "./vistas/pie.php";
 ?>
