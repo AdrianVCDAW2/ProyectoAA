@@ -11,6 +11,6 @@
     <br><br>
 
 
-    <input type="submit" name="sesion" value="Crear usuario">
+    <input type="submit" name="sesion" value="Crear reserva">
     <br><br>
 </form>
