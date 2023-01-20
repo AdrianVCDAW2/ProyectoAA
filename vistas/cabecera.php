@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/fontawesome/css/all.min.css">
 </head>
 <body>
     <header>
@@ -13,9 +14,9 @@
     $nav = "";
             session_start();
             if (isset($_SESSION['usuario'])) {
-                echo "<p class='inline'>Bienvenido, " . $_SESSION['usuario'] . "</p>";
-                echo "<img src='img/avatar.jpg' class='profile-pic'>";
-                echo "<form method='POST' action='controlador/cerrar_sesion.php'><input type='submit' value='Cerrar sesión'/></form>";
+                echo "<div class='right'><p class='inline'>Bienvenido, " . $_SESSION['usuario'] . "</p>";
+                echo "<img src='img/avatar.jpg' class='profile-pic'><a href='?opcion=gestionar_cuenta'><i class='fas fa-edit editar-arriba'></i></a>";
+                echo "<form method='POST' action='controlador/cerrar_sesion.php'><input class='header_input' type='submit' value='Cerrar sesión'/></form></div>";
                 require "config/conectar.php";
                 $sql = 'SELECT id_usuario FROM usuarios WHERE usuario="' . $_SESSION['usuario'] . '"';
                             $resul = mysqli_query($conexion, $sql);

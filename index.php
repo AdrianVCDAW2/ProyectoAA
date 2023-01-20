@@ -25,6 +25,9 @@ if (isset($_GET['opcion'])) {
         case "gestionar_cuenta":
             gestionar_cuenta();
             break;
+        case "cambiar_nombre_usuario":
+            cambiar_nombre_usuario();
+            break;
         case "buscar":
             if (isset($_POST["nombre"])) {
                 buscarResultado();
@@ -150,6 +153,10 @@ function crear_reserva(){
 
 function gestionar_cuenta(){
     include_once "vistas/gestionar_cuenta.php";
+}
+
+function cambiar_nombre_usuario(){
+    include_once "vistas/vista_cambiar_nombre_usuario.php";
 }
 //include_once "./vistas/pie.php";
 ?>
