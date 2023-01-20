@@ -1,8 +1,8 @@
 <?php
-echo "<table><tr><td>ID RESERVA</td><td>ID HABITACION</td><td>ID CLIENTE</td><td>FECHA RESERVA</td><td>FECHA ENTRADA</td><td>N. NOCHES</td></tr>";
+echo "<table><tr><th>TIPO HABITACION</th><th>FECHA RESERVA</th><th>FECHA ENTRADA</th><th>N. NOCHES</th></tr>";
 foreach ($reservas as $reserva) {
-    echo "<tr><td>". $reserva['id_reserva']."</td><td>". $reserva['id_habitacion']."</td><td>". $reserva['id_cliente']."</td><td>". $reserva['fecha_reserva'].
-        "</td><td>". $reserva['fecha_entrada']."</td><td>". $reserva['n_noches']."</td></tr>";
+    echo "<tr><td>". ucfirst(substr($reserva['id_habitacion'],0,-3))."</td><td>". $reserva['fecha_reserva'].
+        "</td><td>". $reserva['fecha_entrada']."</td><td>". $reserva['n_noches']."</td><td><form action='controlador/anular_reserva.php' method='post'><input type='hidden' name='anular' value='".$reserva['id_reserva']."' ><input type='submit' value='Eliminar'></form></td></tr>";
 }
 echo "</table>";
 ?>

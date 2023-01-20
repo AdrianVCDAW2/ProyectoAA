@@ -13,8 +13,8 @@
     $nav = "";
             session_start();
             if (isset($_SESSION['usuario'])) {
-                echo "Bienvenido, " . $_SESSION['usuario'];
-                echo "<img src='img/avatar.jpg' width='30' height='30'>";
+                echo "<p class='inline'>Bienvenido, " . $_SESSION['usuario'] . "</p>";
+                echo "<img src='img/avatar.jpg' class='profile-pic'>";
                 echo "<form method='POST' action='controlador/cerrar_sesion.php'><input type='submit' value='Cerrar sesión'/></form>";
                 require "config/conectar.php";
                 $sql = 'SELECT id_usuario FROM usuarios WHERE usuario="' . $_SESSION['usuario'] . '"';
@@ -85,7 +85,7 @@
             }
             $nav .= "<li><a href='?opcion=crear_usuario'>Crear usuario :)</a></li>";
             $nav .= "<li><a href='?opcion=crear_reserva'>Crear reserva :)</a></li>";
-            $nav .= "<li>3</li>";
+            $nav .= "<li><a href='?opcion=gestionar_cuenta'>Gestionar cuenta :)</a></li>";
             $nav .= "<li>4</li>";
     $nav .= "<li>5</li>";
     echo "<nav>" . $nav . "</nav>";

@@ -22,6 +22,9 @@ if (isset($_GET['opcion'])) {
         case "crear_reserva":
             crear_reserva();
             break;
+        case "gestionar_cuenta":
+            gestionar_cuenta();
+            break;
         case "buscar":
             if (isset($_POST["nombre"])) {
                 buscarResultado();
@@ -29,8 +32,7 @@ if (isset($_GET['opcion'])) {
             else {
                 buscar();
             }
-            
-            break;
+        break;
         case "insertar":
             insertar();
             break;
@@ -144,6 +146,10 @@ function ver_reservas(){
 }
 function crear_reserva(){
     include_once "vistas/vista_crear_reserva.php";
+}
+
+function gestionar_cuenta(){
+    include_once "vistas/gestionar_cuenta.php";
 }
 //include_once "./vistas/pie.php";
 ?>

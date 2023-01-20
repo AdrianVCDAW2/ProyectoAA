@@ -2,5 +2,5 @@
 session_start();
 session_unset();
 echo "Session unsetted";
-header("location:http://localhost/ProyectoAritzAdrian")
+header("location:http://localhost/ProyectoAA")
 ?>

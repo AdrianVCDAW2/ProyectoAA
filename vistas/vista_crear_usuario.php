@@ -1,4 +1,4 @@
-<form method="post" action="controlador/crear_usuario.php">
+<form class="form" method="post" action="controlador/crear_usuario.php" enctype="multipart/form-data">
     Usuario: <input type="text" name="usuario" required>
     <br><br>
     Correo: <input type="mail" name="correo" required>
@@ -11,8 +11,10 @@
         <option value="empleado">Empleado</option>
         <option value="administrador">Administrador</option>
     </select>
-    
-
-    <input type="submit" name="sesion" value="Crear usuario">
     <br><br>
+    <label for="profilepic">Foto de perfil</label>
+    <input type="file" name="profilepic" id="profilepic" accept="image/png, image/gif, image/jpeg" required>
+
+    <br><br>
+    <input type="submit" name="sesion" value="Crear usuario">
 </form>

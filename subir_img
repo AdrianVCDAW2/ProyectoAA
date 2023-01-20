@@ -1,0 +1,7 @@
+if ($_FILES['file']['error'] == 0) {
+  $temp_file = $_FILES['file']['tmp_name'];
+  $target_file = 'uploads/' . $_FILES['file']['name'];
+  move_uploaded_file($temp_file, $target_file);
+}
+
+modificar file name concatenando username
