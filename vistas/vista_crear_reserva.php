@@ -7,8 +7,6 @@
         <option value="suite">Suite</option>
     </select>
     <br><br>
-    ID de cliente: <input type="text" name="cliente" required>
-    <br><br>
     Fecha entrada: <input type="date" name="fecha_entrada" required">
     <br><br>
     Nº de noches: <input type="number" name="noches" required>

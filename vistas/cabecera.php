@@ -37,6 +37,8 @@
                 }*/
 
                 $nav .= "<li><a href='?opcion=ver_reservas'>Ver reservas</a></li>";
+                $nav .= "<li><a href='?opcion=crear_reserva'>Crear reserva :)</a></li>";
+                $nav .= "<li><a href='?opcion=gestionar_cuenta'>Gestionar cuenta :)</a></li>";
             }
             else {
                 
@@ -82,11 +84,11 @@
                     <input type="submit" name="sesion" value="Iniciar sesion"> 
                     <br><br> 
                     </form>';
+                    $nav .= "<li><a href='?opcion=crear_usuario'>Crear usuario :)</a></li>";
                 }
             }
-            $nav .= "<li><a href='?opcion=crear_usuario'>Crear usuario :)</a></li>";
-            $nav .= "<li><a href='?opcion=crear_reserva'>Crear reserva :)</a></li>";
-            $nav .= "<li><a href='?opcion=gestionar_cuenta'>Gestionar cuenta :)</a></li>";
+
+
             $nav .= "<li>4</li>";
     $nav .= "<li>5</li>";
     echo "<nav>" . $nav . "</nav>";
