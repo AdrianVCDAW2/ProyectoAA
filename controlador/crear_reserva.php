@@ -1,6 +1,6 @@
 <?php
 require_once("../config/conectar.php");
-$habitacion = $_GET["habitacion"];
+$habitacion = $_GET["habitacion"] . "_01";
 $cliente = $_GET["cliente"];
 $fecha_reserva = date('y-m-d');
 $fecha_entrada = $_GET["fecha_entrada"];
