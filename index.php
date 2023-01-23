@@ -28,6 +28,12 @@ if (isset($_GET['opcion'])) {
         case "cambiar_nombre_usuario":
             cambiar_nombre_usuario();
             break;
+        case "cambiar_pass_usuario":
+            cambiar_pass_usuario();
+            break;
+        case "cambiar_mail_usuario":
+            cambiar_mail_usuario();
+            break;
         case "buscar":
             if (isset($_POST["nombre"])) {
                 buscarResultado();
@@ -157,6 +163,14 @@ function gestionar_cuenta(){
 
 function cambiar_nombre_usuario(){
     include_once "vistas/vista_cambiar_nombre_usuario.php";
+}
+function cambiar_pass_usuario(){
+    include_once "vistas/vista_cambiar_pass_usuario.php";
+}
+
+function cambiar_mail_usuario(){
+    include_once "vistas/vista_cambiar_mail_usuario.php";
+
 }
 //include_once "./vistas/pie.php";
 ?>
