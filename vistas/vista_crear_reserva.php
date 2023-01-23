@@ -3,9 +3,7 @@
     <br><br>
     ID de cliente: <input type="text" name="cliente" required>
     <br><br>
-    Fecha reserva: <input type="date" name="fecha_reserva" required>
-    <br><br>
-    Fecha entrada: <input type="date" name="fecha_entrada" required>
+    Fecha entrada: <input type="date" name="fecha_entrada" required">
     <br><br>
     Nº de noches: <input type="number" name="noches" required>
     <br><br>
