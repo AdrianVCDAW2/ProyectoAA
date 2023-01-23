@@ -14,16 +14,18 @@
     $nav = "";
             session_start();
             if (isset($_SESSION['usuario'])) {
+                require "config/conectar.php";
+//                $sql = 'SELECT usuario FROM usuarios WHERE usuario="' . $_POST['usuario'] . '"';
                 echo "<div class='right'><p class='inline'>Bienvenido, " . $_SESSION['usuario'] . "</p>";
                 echo "<img src='img/avatar.jpg' class='profile-pic'><a href='?opcion=gestionar_cuenta'><i class='fas fa-edit editar-arriba'></i></a>";
                 echo "<form method='POST' action='controlador/cerrar_sesion.php'><input class='header_input' type='submit' value='Cerrar sesión'/></form></div>";
-                require "config/conectar.php";
-                $sql = 'SELECT id_usuario FROM usuarios WHERE usuario="' . $_SESSION['usuario'] . '"';
-                            $resul = mysqli_query($conexion, $sql);
-                            while ($id = mysqli_fetch_array($resul))
-                            {
-                                $_SESSION['id'] = $id;
-                            }
+//                require "config/conectar.php";
+//                $sql = 'SELECT perfil_usuario FROM usuarios WHERE usuario="' . $_SESSION['usuario'] . '"';
+//                            $resul = mysqli_query($conexion, $sql);
+//                            while ($profile = mysqli_fetch_array($resul))
+//                            {
+//                                $_SESSION['profile'] = $profile;
+//                            }
                 /*$sql = 'SELECT tipo FROM usuarios WHERE usuario="' . $_SESSION['usuario'] . '"';
                 $resul = mysqli_query($conexion, $sql);
                 while ($fila = mysqli_fetch_array($resul))
