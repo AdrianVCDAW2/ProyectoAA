@@ -7,7 +7,14 @@ $fecha_reserva = date('y-m-d');
 $fecha_entrada = $_GET["fecha_entrada"];
 $noches = $_GET["noches"];
 // obtener precio por noche y dar precio total
-$sql = "INSERT INTO `reservas` (`id_habitacion`, `id_cliente`, `fecha_reserva`, `fecha_entrada`, `n_noches`) VALUES ('$habitacion',$cliente[0],'$fecha_reserva','$fecha_entrada',$noches);";
+$sql = "SELECT precio_noche FROM `habitaciones` WHERE id_habitacion='".$habitacion."';";
+$resul = mysqli_query($conexion, $sql);
+while ($precios = mysqli_fetch_array($resul)){
+    $precio[] = $precios;
+}
+$precio = $precio[0][0] * $noches;
+
+$sql = "INSERT INTO `reservas` (`id_habitacion`, `id_cliente`, `fecha_reserva`, `fecha_entrada`, `n_noches`, `precio_total`) VALUES ('$habitacion',$cliente[0],'$fecha_reserva','$fecha_entrada',$noches,$precio);";
 mysqli_query($conexion, $sql);
 header("location:../index.php")
 ?>
