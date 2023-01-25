@@ -15,6 +15,10 @@
 /*    padding: 5px;*/
 /*    display: inline-block;*/
 /*}*/
+
+body {
+    margin: 0;
+}
 .profile-pic {
     position: fixed;
     top: 0;
@@ -41,12 +45,11 @@
 }
 
 nav {
-    margin-top: 75px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #0074d9;
+    background-color: #0c6335;
     color: #fff;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -162,9 +165,53 @@ header {
     right: 20px;
 }
 
+.logo {
+    position: fixed;
+    top: 0;
+    left: -20px;
+    height: 110px;
+    width: 110px;
+}
+
+.ppic {
+    width: 50px;
+    height: 50px;
+}
+
 /*.right {*/
 /*    position: fixed;*/
 /*    top: 10px;*/
 /*    right: 10px;*/
 /*}*/
 
+.formRight {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 9999;
+    color: yellow;
+}
+
+.formRight :is(input[type="text"],input[type="password"]) {
+    border-radius: 5px;
+    border: 1px dashed yellow;
+}
+
+.formUser {
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    background-color: #0c4400;
+    height: 110px;
+}
+
+.title {
+    font-size: 40px;
+    color: yellow;
+    line-height: 110px;
+}

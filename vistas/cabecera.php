@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,9 +9,8 @@
     <link rel="stylesheet" href="styles/fontawesome/css/all.min.css">
 </head>
 <body>
-    <header>
     <?php
-    $nav = "";
+    $nav = "<img class='logo' src='img/logo.png'>";
             session_start();
             if (isset($_SESSION['usuario'])) {
                 require "config/conectar.php";
@@ -84,8 +83,8 @@
 
                 }
                 else {
-                    echo '<form method="post" action="">  
-                    Usuario: <input type="text" name="usuario">
+                    echo '<form class="formRight" method="post" action="">  
+                    Usuario: <input type="text" name="usuario" class="formUser">
                     <br><br>
                     Contraseña: <input type="password" name="passwd">
                     <br><br>
@@ -100,9 +99,8 @@
 
             $nav .= "<li>4</li>";
     $nav .= "<li>5</li>";
+    echo "<header><div class='title'>Hotel Aritz y Adrián</div></header>";
     echo "<nav>" . $nav . "</nav>";
         ?>
-        
-    </header>
 </body>
 </html>
