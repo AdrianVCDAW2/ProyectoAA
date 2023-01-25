@@ -74,6 +74,7 @@
                             $_SESSION['usuario'] = $_POST['usuario'];
                             echo "Sesion iniciada. Hola, " . $_POST['usuario'];
                             echo "<form method='POST' action='controlador/cerrar_sesion.php'><input type='submit' value='Cerrar sesión' /></form>";
+                            header("Refresh:0");
                         }
                         else {
                             echo "Contraseña incorrecta";
