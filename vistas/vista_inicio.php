@@ -20,7 +20,7 @@ echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-a
 		<i class="fa fa-star-half-o" aria-hidden="true"></i>
 	</span>
 		
-			<p class="information">" Lets spread the joy , here is Christmas , the most awaited day of the year.Christmas Tree is what one need the most. Here is the correct tree which will enhance your Christmas.</p>
+			<p class="information">"La habitación ideal para tus vacaciones. Disfruta de tu soledad."</p><i class="fas fa-smoking-ban"></i>s
 
 		
 		
@@ -52,6 +52,7 @@ echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-a
 		<li><strong>Cama: </strong>1.90m * 0.90m</li>
 		<li><strong>Decoración: </strong>Contemporánea</li>
 		<li><strong>Vistas: </strong>Interior</li>
+		<li><strong>Fumar: </strong>Prohibido</li>
 		
 	</ul>
 </div>
