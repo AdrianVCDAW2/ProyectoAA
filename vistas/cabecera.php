@@ -10,7 +10,7 @@
 </head>
 <body>
     <?php
-    $nav = "<img class='logo' src='img/logo.png'>";
+    $nav = "<a href='index.php'><img class='logo' src='img/logo.png'></a>";
             session_start();
             if (isset($_SESSION['usuario'])) {
                 require "config/conectar.php";
