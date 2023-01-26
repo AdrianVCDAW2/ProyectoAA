@@ -26,8 +26,8 @@ echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-a
 		
 <div class="control">
 	<form id="comprar" method="get">
-	
 	<input type="hidden" name="opcion" value="crear_reserva">
+	<input type="hidden" name="tipo_habitacion" value="individual">
 </form>
 	<button id="comprarBtn" class="btn">
 	 <span class="price">35.00€</span>
@@ -83,6 +83,7 @@ echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-a
 	<form id="comprar2" method="get">
 	
 	<input type="hidden" name="opcion" value="crear_reserva">
+	<input type="hidden" name="tipo_habitacion" value="doble">
 </form>
 	<button id="comprarBtn2" class="btn">
 	 <span class="price">50.00€</span>
@@ -138,6 +139,7 @@ echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-a
 	<form id="comprar3" method="get">
 	
 	<input type="hidden" name="opcion" value="crear_reserva">
+	<input type="hidden" name="tipo_habitacion" value="triple">
 </form>
 	<button id="comprarBtn3" class="btn">
 	 <span class="price">66.66€</span>
@@ -194,6 +196,7 @@ echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-a
 	<form id="comprar4" method="get">
 	
 	<input type="hidden" name="opcion" value="crear_reserva">
+	<input type="hidden" name="tipo_habitacion" value="suite">
 </form>
 	<button id="comprarBtn4" class="btn">
 	 <span class="price">98.89€</span>
