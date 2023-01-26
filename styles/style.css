@@ -176,7 +176,6 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 9999;
     height: 110px;
     width: 110px;
     border-radius: 10%;
@@ -222,7 +221,7 @@ header {
     background-color: #0c4400;
     height: 110px;
     position: sticky;
-    z-index: -9999;
+    /*z-index: -9999;*/
 }
 
 .title {

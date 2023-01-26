@@ -18,7 +18,7 @@ $suite = "";
 $tipo_habitacion = $_POST['tipo_habitacion'];
 ${$tipo_habitacion} = "selected";
 echo '
-<form method="get" action="controlador/modificar_reserva.php">
+<form method="get" action="../controlador/modificar_reserva.php">
     Tipo de habitación: <select required name="habitacion">
         <option selected disabled>--Elige un tipo de habitación</option>
         <option value="individual" '.$individual.'>Individual</option>

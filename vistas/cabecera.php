@@ -101,8 +101,16 @@
                     $nav .= "<li><a href='?opcion=crear_usuario'>Crear usuario :)</a></li>";
                 }
             }
-    echo "<header><a href='http://localhost/ProyectoAA'><img class='logo' src='img/logo.png'></a><a href='http://localhost/ProyectoAA>'<div class='title'>Hotel Aritz y Adrián<i class='fa fa-sun-o' aria-hidden='true'></i></a></div></header>";
-    echo "<nav>" . $nav . "</nav>";
+    echo "<header><a href='http://localhost/ProyectoAA'><img class='logo' src='img/logo.png'></a><a href='http://localhost/ProyectoAA'<div class='title'>Hotel Aritz y Adrián<i class='fa fa-sun-o' aria-hidden='true'></i></div></a></header>";
+    echo '<script>let logo = document.getElementsByClassName("logo")[0];console.log(logo);window.addEventListener("scroll",function(){
+//    console.log("scroll");
+if (pageYOffset > 0){
+    logo.style.display = "none";
+}else {
+    logo.style.display = "block";
+}
+})</script>';
+            echo "<nav>" . $nav . "</nav>";
     ?>
 </body>
 </html>
