@@ -31,7 +31,7 @@ echo '
     <br><br>
     Nº de noches: <input type="number" name="noches" value="'.$noches.'" required>
     <br><br>
-
+    <input type="hidden" name="reserva" value="'.$reserva_modificar.'">
     <input type="submit" name="sesion" value="Modificar reserva">
     <br><br>
 </form>';
