@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Hotel Aritz y Adrián</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/fontawesome/css/all.min.css">
 </head>
 <body>
     <?php
-    $nav = "<a href='index.php'><img class='logo' src='img/logo.png'></a>";
+    $nav = "";
             session_start();
             if (isset($_SESSION['usuario'])) {
                 require "config/conectar.php";
@@ -22,7 +22,13 @@
                     $_SESSION['id'] = $id;
                 }
                 echo "<div class='right'><p class='inline'>Bienvenido, " . $_SESSION['usuario'] . "</p>";
-                echo "<img src='img/avatar.jpg' class='profile-pic'><a href='?opcion=gestionar_cuenta'><i class='fas fa-edit editar-arriba'></i></a>";
+
+                $sql = "SELECT perfil_usuario FROM usuarios WHERE id_usuario = ".$_SESSION['id'][0];
+                $resul = mysqli_query($conexion,$sql);
+                while ($fotoPerfil = mysqli_fetch_array($resul)){
+                    $_SESSION['profilepic'] = $fotoPerfil;
+                }
+                echo "<img src='uploads/profilepics/".$_SESSION['profilepic'][0]."' class='profile-pic'><a href='?opcion=gestionar_cuenta'><i class='fas fa-edit editar-arriba'></i></a>";
                 echo "<form class='formRight' method='POST' action='controlador/cerrar_sesion.php'><input class='header_input' type='submit' value='Cerrar sesión'/></form></div>";
 //                require "config/conectar.php";
 //                $sql = 'SELECT perfil_usuario FROM usuarios WHERE usuario="' . $_SESSION['usuario'] . '"';
@@ -43,9 +49,9 @@
                     echo "<button type='button'>Borrar</button>";
                 }*/
 
-                $nav .= "<li><a href='?opcion=ver_reservas'>Ver reservas</a></li>";
-                $nav .= "<li><a href='?opcion=crear_reserva'>Crear reserva :)</a></li>";
-                $nav .= "<li><a href='?opcion=gestionar_cuenta'>Gestionar cuenta :)</a></li>";
+                $nav .= "<li><a href='?opcion=ver_reservas' class='navLink'>Ver reservas</a></li>";
+                $nav .= "<li><a href='?opcion=crear_reserva' class='navLink'>Crear reserva</a></li>";
+                $nav .= "<li><a href='?opcion=gestionar_cuenta' class='navLink'>Gestionar cuenta</a></li>";
             }
             else {
                 
@@ -95,12 +101,8 @@
                     $nav .= "<li><a href='?opcion=crear_usuario'>Crear usuario :)</a></li>";
                 }
             }
-
-
-            $nav .= "<li>4</li>";
-    $nav .= "<li>5</li>";
-    echo "<header><div class='title'>Hotel Aritz y Adrián</div></header>";
+    echo "<header><a href='http://localhost/ProyectoAA'><img class='logo' src='img/logo.png'></a><a href='http://localhost/ProyectoAA>'<div class='title'>Hotel Aritz y Adrián<i class='fa fa-sun-o' aria-hidden='true'></i></a></div></header>";
     echo "<nav>" . $nav . "</nav>";
-        ?>
+    ?>
 </body>
 </html>

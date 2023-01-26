@@ -18,6 +18,8 @@
 
 body {
     margin: 0;
+    background-color: #85b11a;
+
 }
 .profile-pic {
     position: fixed;
@@ -28,12 +30,15 @@ body {
     border-radius: 50%;
     border: 2px solid #0074d9; /* add border */
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* add a subtle shadow */
+    z-index: 9999;
 }
 
 .editar-arriba {
     position: fixed;
     top: 20px;
     right: 0;
+    z-index: 9999;
+    color: yellow;
 }
 
 .inline{
@@ -42,11 +47,13 @@ body {
     position: fixed;
     top: 0;
     right: 55px;
+    z-index: 9999;
+    color: yellow;
 }
 
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     padding: 10px 20px;
     background-color: #0c6335;
@@ -168,9 +175,11 @@ header {
 .logo {
     position: fixed;
     top: 0;
-    left: -20px;
+    left: 0;
+    z-index: 9999;
     height: 110px;
     width: 110px;
+    border-radius: 10%;
 }
 
 .ppic {
@@ -192,9 +201,13 @@ header {
     color: yellow;
 }
 
-.formRight :is(input[type="text"],input[type="password"]) {
+.formRight :is(input[type="text"],input[type="password"],input[type="submit"]) {
     border-radius: 5px;
     border: 1px dashed yellow;
+}
+
+.navLink {
+    color: yellow;
 }
 
 .formUser {
@@ -208,6 +221,8 @@ header {
     justify-content: center;
     background-color: #0c4400;
     height: 110px;
+    position: sticky;
+    z-index: -9999;
 }
 
 .title {
@@ -217,7 +232,7 @@ header {
 }
 
 #container{
-    box-shadow: 0 15px 30px 1px grey;
+    box-shadow: 0 15px 30px 1px green;
     background: rgba(255, 255, 255, 0.90);
     text-align: center;
     border-radius: 5px;
@@ -374,7 +389,7 @@ header {
     line-height: 1.8;
     text-align: left;
     font-size: 105%;
-    cursor: no-drop;
+    cursor: default;
     color: #FFF;
     height: 100%;
     width: 100%;
@@ -390,3 +405,25 @@ header {
 
 .product-image:hover img {transition: all 0.3s ease-out;}
 .product-image:hover img {transform: scale(1.2, 1.2);}
+
+.fa-ban {
+    color: red;
+}
+
+.fa-smoking-ban {
+    color: red;
+}
+
+.red {
+    color: red;
+}
+
+.gold {
+    background-image: radial-gradient(circle at 50% 13.49%, #ffff55 0, #fff64d 12.5%, #ffe246 25%, #ffcc41 37.5%, #f2b53c 50%, #e39f38 62.5%, #d48c36 75%, #c77b34 87.5%, #bb6c33 100%);
+}
+
+.tipoHabitacion {
+    color: #85b11a;
+    text-decoration: underline;
+    text-decoration-style: wavy;
+}
