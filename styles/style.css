@@ -314,7 +314,7 @@ header {
 
     transform: translateY(0px);
     transition: 0.3s linear;
-    background:  #809fff;
+    background:  #0c6335;
     border-radius: 5px;
     position: relative;
     overflow: hidden;
@@ -328,7 +328,8 @@ header {
 }
 
 .btn:hover{transform: translateY(-6px);
-    background: #1a66ff;}
+    background: #85b11a;
+}
 
 .btn span {
     font-family: 'Farsan', cursive;
