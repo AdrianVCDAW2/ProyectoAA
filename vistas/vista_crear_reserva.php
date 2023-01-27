@@ -1,7 +1,7 @@
 <?php
 $descuento = "";
 if ($_SESSION["tipo_usuario"][0] == "empleado") {
-    $descuento = "<p>Los empleados tienen descuento</p>";
+    $descuento = "<p>Los empleados tienen <span class='red'>descuento</span></p><br>";
 }
 $individual = "";
 $doble = "";
@@ -25,7 +25,7 @@ echo '
     Fecha entrada: <input type="date" name="fecha_entrada" required">
     <br><br>
     Nº de noches: <input type="number" name="noches" required>
-    <br><br>
+    <br><br>'.$descuento.'
 
     <input type="submit" name="sesion" value="Crear reserva">
     <br><br>
