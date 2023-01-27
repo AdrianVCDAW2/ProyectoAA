@@ -426,3 +426,11 @@ header {
     text-decoration: underline;
     text-decoration-style: wavy;
 }
+
+td {
+    text-align: center;
+}
+
+th {
+    text-align: center;
+}

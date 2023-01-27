@@ -34,6 +34,9 @@ if (isset($_GET['opcion'])) {
         case "cambiar_mail_usuario":
             cambiar_mail_usuario();
             break;
+        case "gestionar_usuarios":
+            gestionar_usuarios();
+            break;
         case "buscar":
             if (isset($_POST["nombre"])) {
                 buscarResultado();
@@ -171,6 +174,16 @@ function cambiar_pass_usuario(){
 function cambiar_mail_usuario(){
     include_once "vistas/vista_cambiar_mail_usuario.php";
 
+}
+
+function gestionar_usuarios(){
+    require "config/conectar.php";
+    $sql = "SELECT * FROM usuarios";
+    $resul = mysqli_query($conexion,$sql);
+    while ($fila = mysqli_fetch_array($resul)){
+        $usuarios[] = $fila;
+    }
+    include_once "vistas/vista_gestion_usuarios.php";
 }
 //include_once "./vistas/pie.php";
 ?>
