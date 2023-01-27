@@ -1,4 +1,8 @@
 <?php
+$descuento = "";
+if ($_SESSION["tipo_usuario"][0] == "empleado") {
+    $descuento = "<p>Los empleados tienen descuento</p>";
+}
 $individual = "";
 $doble = "";
 $triple = "";
