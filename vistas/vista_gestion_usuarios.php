@@ -6,6 +6,5 @@ foreach ($usuarios as $usuario) {
         echo " disabled";
     }
     echo "></form></td></tr>";
-    echo $usuario["id_usuario"];
 }
 echo "</table>";
