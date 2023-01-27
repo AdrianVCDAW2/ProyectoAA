@@ -12,8 +12,18 @@ $resul = mysqli_query($conexion, $sql);
 while ($precios = mysqli_fetch_array($resul)){
     $precio[] = $precios;
 }
-var_dump($precio);
-$precio = $precio[0][0] * $noches;
+$sql = "SELECT tipo_usuario FROM `usuarios` WHERE id_usuario='".$cliente[0]."';";
+$resul = mysqli_query($conexion, $sql);
+while ($tipos = mysqli_fetch_array($resul)){
+    $tipo[] = $tipos;
+}
+$tipo_usuario = $tipo[0][0];
+if ($tipo_usuario == "empleado") {
+    $precio = ($precio[0][0] * $noches) / 2;
+}
+else {
+    $precio = $precio[0][0] * $noches;
+}
 echo $cliente;
 $sql = "UPDATE `reservas` SET id_habitacion= '$habitacion', fecha_reserva='$fecha_reserva', fecha_entrada='$fecha_entrada', n_noches=$noches, precio_total=$precio WHERE id_reserva=".$id;
 echo $sql;

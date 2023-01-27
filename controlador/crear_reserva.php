@@ -12,7 +12,19 @@ $resul = mysqli_query($conexion, $sql);
 while ($precios = mysqli_fetch_array($resul)){
     $precio[] = $precios;
 }
-$precio = $precio[0][0] * $noches;
+$sql = "SELECT tipo_usuario FROM `usuarios` WHERE id_usuario='".$cliente[0]."';";
+$resul = mysqli_query($conexion, $sql);
+while ($tipos = mysqli_fetch_array($resul)){
+    $tipo[] = $tipos;
+}
+$tipo_usuario = $tipo[0][0];
+if ($tipo_usuario == "empleado") {
+    $precio = ($precio[0][0] * $noches) / 2;
+}
+else {
+    $precio = $precio[0][0] * $noches;
+}
+
 
 $sql = "INSERT INTO `reservas` (`id_habitacion`, `id_cliente`, `fecha_reserva`, `fecha_entrada`, `n_noches`, `precio_total`) VALUES ('$habitacion',$cliente[0],'$fecha_reserva','$fecha_entrada',$noches,$precio);";
 mysqli_query($conexion, $sql);
