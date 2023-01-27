@@ -31,7 +31,14 @@
                 }
                 echo "<img src='uploads/profilepics/".$_SESSION['profilepic'][0]."' class='profile-pic'><a href='?opcion=gestionar_cuenta'><i class='fas fa-edit editar-arriba'></i></a>";
                 echo "<form class='formRight' method='POST' action='controlador/cerrar_sesion.php'><input class='header_input' type='submit' value='Cerrar sesión'/></form></div>";
-//                require "config/conectar.php";
+                $sql = "SELECT tipo_usuario FROM usuarios WHERE id_usuario=".$_SESSION["id"][0];
+                $resul = mysqli_query($conexion,$sql);
+                while ($tipo_usuario = mysqli_fetch_array($resul)){
+                    $_SESSION["tipo_usuario"] = $tipo_usuario;
+                }
+
+                $tipo_usuario = $_SESSION["tipo_usuario"][0];
+                //                require "config/conectar.php";
 //                $sql = 'SELECT perfil_usuario FROM usuarios WHERE usuario="' . $_SESSION['usuario'] . '"';
 //                            $resul = mysqli_query($conexion, $sql);
 //                            while ($profile = mysqli_fetch_array($resul))
@@ -53,6 +60,9 @@
                 $nav .= "<li><a href='?opcion=ver_reservas' class='navLink'>Ver reservas</a></li>";
                 $nav .= "<li><a href='?opcion=crear_reserva' class='navLink'>Crear reserva</a></li>";
                 $nav .= "<li><a href='?opcion=gestionar_cuenta' class='navLink'>Gestionar cuenta</a></li>";
+                if ($tipo_usuario == "administrador"){
+                    $nav .= "<li><a href='?opcion=gestionar_usuarios' class='navLink'>Gestionar usuarios</a></li>";
+                }
             }
             else {
                 

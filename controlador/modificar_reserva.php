@@ -12,6 +12,7 @@ $resul = mysqli_query($conexion, $sql);
 while ($precios = mysqli_fetch_array($resul)){
     $precio[] = $precios;
 }
+var_dump($precio);
 $precio = $precio[0][0] * $noches;
 echo $cliente;
 $sql = "UPDATE `reservas` SET id_habitacion= '$habitacion', fecha_reserva='$fecha_reserva', fecha_entrada='$fecha_entrada', n_noches=$noches, precio_total=$precio WHERE id_reserva=".$id;
