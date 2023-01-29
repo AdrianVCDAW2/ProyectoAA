@@ -16,6 +16,11 @@
 /*    display: inline-block;*/
 /*}*/
 
+@font-face {
+    font-family: "modeka";
+    src: url('fonts/modeka.otf');
+}
+
 body {
     margin: 0;
     background-color: #85b11a;
@@ -58,7 +63,7 @@ nav {
     padding: 10px 20px;
     background-color: #0c6335;
     color: #fff;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 4px rgb(94, 134, 0);
 }
 
 nav a {
@@ -434,4 +439,220 @@ td {
 
 th {
     text-align: center;
+}
+
+/** {*/
+/*    box-sizing: border-box;*/
+/*}*/
+img {
+    max-width: 100%;
+    vertical-align: top;
+}
+.gallery {
+    display: flex;
+    margin: 10px auto;
+    max-width: 600px;
+    position: relative;
+    padding-top: 66.6666666667%;
+}
+@media screen and (min-width: 600px) {
+    .gallery {
+        padding-top: 400px;
+        position: relative;
+    }
+}
+.gallery__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+.gallery__thumb {
+    padding-top: 6px;
+    margin: 6px;
+    display: block;
+}
+.gallery__selector {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+}
+.gallery__selector:checked + .gallery__img {
+    opacity: 1;
+}
+.gallery__selector:checked ~ .gallery__thumb > img {
+    box-shadow: 0 0 0 3px #5e8600;
+}
+
+.habitacionTitle {
+    display: flex;
+    justify-content: center;
+    background-color: #2f3d00;
+    width: 600px;
+    /*margin-left: 50v*/
+    margin-left: calc(49.6vw - 300px);
+    margin-top: 50px;
+    padding: 10px 0;
+}
+
+.habitacionTitle h1 {
+    font-family: 'Bebas Neue', cursive;
+    display: inline-block;
+    position: relative;
+    font-size: 30px;
+    color: white;
+    margin: 0;
+}
+
+.imgDescription {
+    position: absolute;
+    width: 100%;
+    top: 0;
+
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0,0,0,.5);
+    color: #fff;
+}
+
+.gallery__selector:checked + .imgDescription {
+    display: flex;
+}
+
+.container {
+    max-width: 800px;
+    margin: 5% auto;
+    padding: 20px;
+    background-color: #5e8600;
+    border-radius: 10px;
+    overflow: hidden;
+    box-sizing: border-box;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
+}
+
+.text-center {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.lightbox-gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.lightbox-gallery div > img {
+    max-width: 100%;
+    display: block;
+}
+
+.lightbox-gallery div {
+    margin: 10px;
+    flex-basis: 180px;
+}
+
+@media only screen and (max-width: 480px) {
+    .lightbox-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .lightbox > div {
+        margin-bottom: 10px;
+    }
+}
+
+/*Lighbox CSS*/
+
+.lightbox {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    padding-top: 30px;
+    box-sizing: border-box;
+}
+
+.lightbox-gallery img {
+    display: block;
+    margin: auto;
+    border-radius: 20px;
+}
+
+.lightbox img {
+    display: block;
+    margin: auto;
+}
+
+.lightbox .caption {
+    margin: 15px auto;
+    width: 50%;
+    text-align: center;
+    font-size: 1em;
+    line-height: 1.5;
+    font-weight: 700;
+    color: #eee;
+}
+
+.wrap{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.column-3{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 1rem;
+    row-gap: 1rem;
+}
+
+.menu-restaurante{
+    color: #fff;
+    text-align: center;
+    background-repeat: no-repeat;
+    border-radius: 6px;
+    display: flex;
+    flex-flow: column;
+}
+
+hr{
+    background: #FFC300;
+    height: 2px;
+    width: 30px;
+    border: none;
+}
+
+.precio-menu{
+    font-weight: bold;
+}
+
+.precio-menu span{
+    font-size: 2rem;
+    color: #FFC300;
+    font-family: serif;
+}
+
+.title-menu {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-family: "modeka",sans-serif;
+}
+
+.menu-restaurante>h4 {
+    font-size: 18px;
+}
+.menu-restaurante>h3 {
+    font-size: 25px;
+}
+
+.menu-restaurante>p {
+    font-family: "modeka",sans-serif;
+    font-weight: bold;
 }

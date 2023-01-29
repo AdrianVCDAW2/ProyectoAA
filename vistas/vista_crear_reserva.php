@@ -13,7 +13,7 @@ if (isset($_GET['tipo_habitacion'])){
     ${$tipo_habitacion} = "selected";
 }
 echo '
-<form method="get" action="controlador/crear_reserva.php">
+<form class="form" method="get" action="controlador/crear_reserva.php">
     Tipo de habitación: <select required name="habitacion">
         <option selected disabled>--Elige un tipo de habitación</option>
         <option value="individual" '.$individual.'>Individual</option>

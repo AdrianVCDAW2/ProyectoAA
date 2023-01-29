@@ -231,20 +231,37 @@ echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-a
 
 </div>
 ';
-echo "<script>
+if (isset($_SESSION['id'])){
+    echo "<script>
+        document.getElementById('comprarBtn').addEventListener('click',function(){
+            document.getElementById('comprar').submit();
+        })
+        document.getElementById('comprarBtn2').addEventListener('click',function(){
+            document.getElementById('comprar2').submit();
+        })
+        document.getElementById('comprarBtn3').addEventListener('click',function(){
+            document.getElementById('comprar3').submit();
+        })
+        document.getElementById('comprarBtn4').addEventListener('click',function(){
+            document.getElementById('comprar4').submit();
+        })
+</script>";
+}else {
+    echo "<script>
     document.getElementById('comprarBtn').addEventListener('click',function(){
-        document.getElementById('comprar').submit();
+        alert('Tienes que iniciar sesión para reservar')
     })
     document.getElementById('comprarBtn2').addEventListener('click',function(){
-        document.getElementById('comprar2').submit();
+        alert('Tienes que iniciar sesión para reservar')
     })
     document.getElementById('comprarBtn3').addEventListener('click',function(){
-        document.getElementById('comprar3').submit();
+        alert('Tienes que iniciar sesión para reservar')
     })
     document.getElementById('comprarBtn4').addEventListener('click',function(){
-        document.getElementById('comprar4').submit();
+        alert('Tienes que iniciar sesión para reservar')
     })
 </script>";
+}
 
 
 ?>

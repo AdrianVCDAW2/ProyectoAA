@@ -1,7 +1,5 @@
 <?php
-require "../config/conectar.php";
-//include_once "../vistas/cabecera.php";
-session_start();
+require "config/conectar.php";
 $reserva_modificar = $_POST['modificar'];
 $sql = "SELECT * FROM reservas WHERE id_cliente = '".$_SESSION["id"][0]."' AND id_reserva = '".$reserva_modificar."'";
 $resul = mysqli_query($conexion,$sql);
@@ -18,7 +16,7 @@ $suite = "";
 $tipo_habitacion = $_POST['tipo_habitacion'];
 ${$tipo_habitacion} = "selected";
 echo '
-<form method="get" action="../controlador/modificar_reserva.php">
+<form method="get" action="controlador/modificar_reserva.php">
     Tipo de habitación: <select required name="habitacion">
         <option selected disabled>--Elige un tipo de habitación</option>
         <option value="individual" '.$individual.'>Individual</option>

@@ -109,7 +109,7 @@
                     <input type="submit" name="sesion" value="Iniciar sesion"> 
                     <br><br> 
                     </form>';
-                    $nav .= "<li><a href='?opcion=crear_usuario'>Crear usuario :)</a></li>";
+                    $nav .= "<li><a href='?opcion=crear_usuario' class='navlink'>Crear usuario</a></li>";
                 }
             }
     echo "<header><a href='http://localhost/ProyectoAA'><img class='logo' src='img/logo.png'></a><a href='http://localhost/ProyectoAA'<div class='title'>Hotel Aritz y Adrián<i class='fa fa-sun-o' aria-hidden='true'></i></div></a></header>";
@@ -121,6 +121,9 @@ if (pageYOffset > 0){
     logo.style.display = "block";
 }
 })</script>';
+    $nav .= "<li><a href='?opcion=ver_habitaciones' class='navlink'>Ver habitaciones</a></li>";
+    $nav .= "<li><a href='?opcion=ver_instalaciones' class='navlink'>Nuestras instalaciones</a></li>";
+    $nav .= "<li><a href='?opcion=ver_menu' class='navlink'>Nuestro menú</a></li>";
             echo "<nav>" . $nav . "</nav>";
     ?>
 </body>

@@ -37,6 +37,18 @@ if (isset($_GET['opcion'])) {
         case "gestionar_usuarios":
             gestionar_usuarios();
             break;
+        case "ver_habitaciones":
+            ver_habitaciones();
+            break;
+        case "modificar_reserva":
+            modificar_reserva();
+            break;
+        case "ver_instalaciones":
+            ver_instalaciones();
+            break;
+        case "ver_menu":
+            ver_menu();
+            break;
         case "buscar":
             if (isset($_POST["nombre"])) {
                 buscarResultado();
@@ -186,4 +198,20 @@ function gestionar_usuarios(){
     include_once "vistas/vista_gestion_usuarios.php";
 }
 //include_once "./vistas/pie.php";
+
+function ver_habitaciones(){
+    include_once "vistas/ver_habitaciones.php";
+}
+
+function modificar_reserva(){
+    include_once "vistas/vista_modificar_reserva.php";
+}
+
+function ver_instalaciones(){
+    include_once "vistas/vista_ver_instalaciones.php";
+}
+
+function ver_menu(){
+    include_once "vistas/vista_menu.php";
+}
 ?>
